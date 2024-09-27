@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - VrishaFarms</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+</head>
+<body>
+    <!-- Navbar with search bar, dropdowns, cart, login, and tracking -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #2E8B57;">
+        <!-- Dark green background -->
+        <div class="container-fluid">
+            <!-- Brand logo or name -->
+            <a class="navbar-brand" href="#" style="font-size: 30px; color: gold;">Vrisha Farms</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Search bar -->
+                <form class="d-flex me-auto">
+                    <input class="form-control me-2" style="width: 350px; height: 45px;" type="search" placeholder="Products" aria-label="Search">
+                    <button class="btn btn-outline-light" style="background-color: #1E3D59; width: 90px; height: 45px; color: white;" type="submit">Search</button>
+                </form>
+
+                <!-- Dropdown menus -->
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px; padding: 10px;">
+                            Pollination Services
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Organic Farmers</a></li>
+                            <li><a class="dropdown-item" href="#">Corporate Services</a></li>
+                            <li><a class="dropdown-item" href="#">Bee Keepers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px; padding: 10px;">
+                            Biodiversity-Champions
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Adopt A Bee</a></li>
+                            <li><a class="dropdown-item" href="#">Adopt A Tree</a></li>
+                            <li><a class="dropdown-item" href="#">Adopt A Colony</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Login button with circle icon -->
+                <button type="button" class="btn btn-outline-light rounded-circle mx-2" style="background-color: #FFD700; color: #1E3D59; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;">
+                    <i class="fas fa-user" style="font-size: 20px;"></i> <!-- Login face icon -->
+                </button>
+
+                <!-- Container for Cart and Track Products buttons -->
+                <div class="d-flex align-items-center p-2" style="border: 2px solid #1E3D59; border-radius: 10px; background-color: #228B22;">
+                    <!-- Dark green box with border -->
+                    <!-- Cart button -->
+                    <button type="button" class="btn btn-outline-warning position-relative mx-2" style="background-color: #1E3D59; color: white;">
+                        Cart
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            0 <!-- Cart items will update dynamically -->
+                        </span>
+                    </button>
+
+                    <!-- Track Products button -->
+                    <button type="button" class="btn btn-outline-light mx-2" style="background-color: #FFD700; color: black;">
+                        Track Products
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main container -->
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - VrishaFarms - <a href="#" style="color: #FFD700;">Privacy</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
